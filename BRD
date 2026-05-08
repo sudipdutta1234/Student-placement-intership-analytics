@@ -1,0 +1,189 @@
+BRD (Business Requirement Document)
+Project Name
+Internship Selection Dashboard
+
+Objective
+The dashboard helps analyze:
+
+
+Candidate performance
+
+
+Selection trends
+
+
+Department analysis
+
+
+Internship insights
+
+
+
+Dashboard Page 1 — Overview Dashboard
+KPIs
+KPI 1 — Total Candidates
+Formula:
+Total Candidates = COUNT('Table'[Candidate_ID])
+
+KPI 2 — Selected Candidates
+Formula:
+Selected Candidates =CALCULATE(    COUNT('Table'[Candidate_ID]),    'Table'[Selection_Status] = "Selected")
+
+KPI 3 — Selection Rate %
+Formula:
+Selection Rate % =DIVIDE(    [Selected Candidates],    [Total Candidates]) * 100
+
+KPI 4 — Average Performance Score
+Formula:
+Average Performance Score =AVERAGE('Table'[Performance_Score])
+
+Charts for Page 1
+1. Bar Chart
+Name:
+Candidates by Department
+Axis:
+Department
+Values:
+Count of Candidates
+
+2. Pie Chart
+Name:
+Selection Status Distribution
+Legend:
+Selection Status
+Values:
+Candidate Count
+
+3. Column Chart
+Name:
+Category Level Analysis
+Axis:
+Category_Level
+Values:
+Average Performance Score
+
+4. Line Chart
+Name:
+Performance Trend
+Axis:
+Candidate ID
+Values:
+Performance Score
+
+Slicers for Page 1
+
+
+Department
+
+
+Gender
+
+
+Category_Level
+
+
+Selection_Status
+
+
+
+Dashboard Page 2 — Detailed Analysis
+KPIs
+KPI 1 — Highest Performance Score
+Formula:
+Highest Score =MAX('Table'[Performance_Score])
+
+KPI 2 — Lowest Performance Score
+Formula:
+Lowest Score =MIN('Table'[Performance_Score])
+
+KPI 3 — Average Internship Duration
+Formula:
+Average Duration =AVERAGE('Table'[Internship_Duration])
+
+KPI 4 — Total Departments
+Formula:
+Total Departments =DISTINCTCOUNT('Table'[Department])
+
+Charts for Page 2
+1. Scatter Plot
+Name:
+Performance vs Duration
+X-Axis:
+Internship Duration
+Y-Axis:
+Performance Score
+
+2. Donut Chart
+Name:
+Gender Distribution
+Legend:
+Gender
+Values:
+Candidate Count
+
+3. Tree Map
+Name:
+Department Wise Candidates
+Group:
+Department
+Values:
+Candidate Count
+
+4. Table Visual
+Name:
+Candidate Details
+Fields:
+
+
+Candidate ID
+
+
+Department
+
+
+Gender
+
+
+Performance Score
+
+
+Selection Status
+
+
+
+Slicers for Page 2
+
+
+Department
+
+
+Gender
+
+
+Performance_Score
+
+
+Internship_Duration
+
+
+
+Final Output
+After cleaning:
+
+
+Null values removed
+
+
+Outliers removed
+
+
+Duplicate rows removed
+
+
+Useless columns deleted
+
+
+Important columns created
+
+
+Dataset ready for Power BI dashboard
